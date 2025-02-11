@@ -10,10 +10,10 @@ import multiprocessing as mp
 from tqdm import tqdm
 import librosa
 
-from data_gen.singing.speech2singing.data_gen_utils import *
-from vocoders.base_vocoder import get_vocoder_cls
+from ...singing.speech2singing.data_gen_utils import *
+from ....vocoders.base_vocoder import get_vocoder_cls
 
-from utils.hparams import hparams, set_hparams
+from ....utils.hparams import hparams, set_hparams
 
 DEBUG = False
 
