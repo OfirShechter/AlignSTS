@@ -4,7 +4,6 @@ import types
 import numpy as np
 import torch
 import torch.distributed as dist
-from utils.ckpt_utils import load_ckpt
 
 def reduce_tensors(metrics):
     new_metrics = {}
