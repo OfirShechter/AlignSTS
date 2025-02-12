@@ -11,18 +11,17 @@ import json
 import traceback
 from scipy.ndimage import gaussian_filter
 
-import utils
-from utils.hparams import hparams
-from data_gen.tts.data_gen_utils import get_pitch
-from utils.indexed_datasets import IndexedDataset
-from utils.pitch_utils import norm_interp_f0, denorm_f0, midi_pitch_shift, midi_to_hz, get_uv
-import utils.audio as audio
-from utils.plot import spec_to_figure
-from utils.text_encoder import TokenTextEncoder
-from tasks.base_task import BaseDataset
-from tasks.tts.fs2 import FastSpeech2Task
-from tasks.tts.transformer_tts import TransformerTtsTask
-from vocoders.base_vocoder import get_vocoder_cls, BaseVocoder
+from ...utils.hparams import hparams
+from ...data_gen.tts.data_gen_utils import get_pitch
+from ...utils.indexed_datasets import IndexedDataset
+from ...utils.pitch_utils import norm_interp_f0, denorm_f0, midi_pitch_shift, midi_to_hz, get_uv
+import STS.utils.audio as audio
+from ...utils.plot import spec_to_figure
+from ...utils.text_encoder import TokenTextEncoder
+from ...tasks.base_task import BaseDataset
+from ...tasks.tts.fs2 import FastSpeech2Task
+from ...tasks.tts.transformer_tts import TransformerTtsTask
+from ...vocoders.base_vocoder import get_vocoder_cls, BaseVocoder
 
 from modules.speech2singing.diffvae import DiffVAE
 from modules.speech2singing.diffvae2 import DiffVAE2, DiffVAE3
