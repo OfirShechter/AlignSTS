@@ -469,7 +469,7 @@ class Trainer:
     # utils
     ####################
     def get_task_ref(self):
-        from tasks.base_task import BaseTask
+        from ..tasks.base_task import BaseTask
         task: BaseTask = self.task.module if isinstance(self.task, DDP) else self.task
         return task
 

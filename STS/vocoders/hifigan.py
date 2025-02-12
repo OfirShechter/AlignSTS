@@ -6,7 +6,7 @@ import re
 import librosa
 import torch
 
-import utils
+import STS.utils as utils
 import numpy as np
 from ..modules.hifigan.hifigan import HifiGanGenerator
 from ..utils.hparams import hparams, set_hparams
