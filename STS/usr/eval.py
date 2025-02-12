@@ -15,7 +15,7 @@ import torch
 from scipy.ndimage import gaussian_filter
 
 from ..utils import audio
-from vocoders.hifigan import HifiGAN
+from ..vocoders.hifigan import HifiGAN
 # from ..utils.hparams import hparams, set_hparams
 from data_gen.tts.data_gen_utils import get_pitch
 

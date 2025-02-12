@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import math
 from math import sqrt
 
-from utils.hparams import hparams
+from ...utils.hparams import hparams
 
 class AttrDict(dict):
     def __init__(self, *args, **kwargs):

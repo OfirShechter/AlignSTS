@@ -4,7 +4,7 @@ from torch import nn
 from torch.nn import Parameter
 import torch.onnx.operators
 import torch.nn.functional as F
-from utils.tts_utils import make_positions, softmax, get_incremental_state, set_incremental_state
+from ...utils.tts_utils import make_positions, softmax, get_incremental_state, set_incremental_state
 
 
 class Reshape(nn.Module):

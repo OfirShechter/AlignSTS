@@ -11,7 +11,7 @@ from torch import nn
 from tqdm import tqdm
 from einops import rearrange
 
-from utils.hparams import hparams
+from ...utils.hparams import hparams
 
 
 def exists(x):

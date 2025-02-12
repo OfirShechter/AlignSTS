@@ -1,13 +1,13 @@
 import matplotlib
 
-from utils.tts_utils import sequence_mask, select_attn, get_focus_rate, get_phone_coverage_rate, get_diagonal_focus_rate
+from ...utils.tts_utils import sequence_mask, select_attn, get_focus_rate, get_phone_coverage_rate, get_diagonal_focus_rate
 
 matplotlib.use('Agg')
 
 from multiprocessing.pool import Pool
 from ...tasks.base_task import data_loader
 from ...utils.common_schedulers import RSQRTSchedule
-from vocoders.base_vocoder import get_vocoder_cls, BaseVocoder
+from ...vocoders.base_vocoder import get_vocoder_cls, BaseVocoder
 
 import os
 import numpy as np

@@ -19,7 +19,7 @@ from scipy.signal import get_window
 from math import pi, sqrt, exp
 import pyworld as pw
 import parselmouth
-from utils.hparams import hparams
+from ....utils.hparams import hparams
 
 # mel_basis = mel(16000, 1024, fmin=90, fmax=7600, n_mels=80).T
 min_level = np.exp(-100 / 20 * np.log(10))

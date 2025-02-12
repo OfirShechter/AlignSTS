@@ -2,11 +2,11 @@ import os
 
 os.environ["OMP_NUM_THREADS"] = "1"
 
-from utils.multiprocess_utils import chunked_multiprocess_run
-from vocoders.base_vocoder import VOCODERS
+from ...utils.multiprocess_utils import chunked_multiprocess_run
+from ...vocoders.base_vocoder import VOCODERS
 import traceback
-from data_gen.tts.base_binarizer import BaseBinarizer
-from data_gen.tts.base_pre_align import BasePreAlign
+from ...data_gen.tts.base_binarizer import BaseBinarizer
+from ...data_gen.tts.base_pre_align import BasePreAlign
 import pandas as pd
 from tqdm import tqdm
 import glob
@@ -15,10 +15,10 @@ import re
 import subprocess
 from itertools import chain
 import chardet
-from data_gen.tts.data_gen_utils import trim_long_silences
-from utils.audio import save_wav, to_mp3
-from utils.hparams import hparams
-from utils.text_norm import NSWNormalizer
+from ...data_gen.tts.data_gen_utils import trim_long_silences
+from ...utils.audio import save_wav, to_mp3
+from ...utils.hparams import hparams
+from ...utils.text_norm import NSWNormalizer
 
 
 def get_encoding(file):

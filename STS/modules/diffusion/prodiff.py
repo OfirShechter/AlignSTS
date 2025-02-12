@@ -9,7 +9,7 @@ from tqdm import tqdm
 from inspect import isfunction
 
 from ...modules.fastspeech.fs2 import FastSpeech2
-from utils.hparams import hparams
+from ...utils.hparams import hparams
 
 def vpsde_beta_t(t, T, min_beta, max_beta):
     t_coef = (2 * t - 1) / (T ** 2)

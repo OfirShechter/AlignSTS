@@ -183,7 +183,7 @@ class DiscriminatorP(torch.nn.Module):
         super(DiscriminatorP, self).__init__()
         self.use_cond = use_cond
         if use_cond:
-            from utils.hparams import hparams
+            from ...utils.hparams import hparams
             t = hparams['hop_size']
             self.cond_net = torch.nn.ConvTranspose1d(80, 1, t * 2, stride=t, padding=t // 2)
             c_in = 2
@@ -289,7 +289,7 @@ class DiscriminatorS(torch.nn.Module):
 class MultiScaleDiscriminator(torch.nn.Module):
     def __init__(self, use_cond=False, c_in=1):
         super(MultiScaleDiscriminator, self).__init__()
-        from utils.hparams import hparams
+        from ...utils.hparams import hparams
         self.discriminators = nn.ModuleList([
             DiscriminatorS(use_spectral_norm=True, use_cond=use_cond,
                            upsample_rates=[4, 4, hparams['hop_size'] // 16],

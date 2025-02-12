@@ -1,17 +1,17 @@
 import os
 os.environ["OMP_NUM_THREADS"] = "1"
 
-from utils.multiprocess_utils import chunked_multiprocess_run
+from ...utils.multiprocess_utils import chunked_multiprocess_run
 import random
 import traceback
 import json
 from resemblyzer import VoiceEncoder
 from tqdm import tqdm
-from data_gen.tts.data_gen_utils import get_mel2ph, get_pitch, build_phone_encoder
-from utils.hparams import set_hparams, hparams
+from ...data_gen.tts.data_gen_utils import get_mel2ph, get_pitch, build_phone_encoder
+from ...utils.hparams import set_hparams, hparams
 import numpy as np
-from utils.indexed_datasets import IndexedDatasetBuilder
-from vocoders.base_vocoder import get_vocoder_cls
+from ...utils.indexed_datasets import IndexedDatasetBuilder
+from ...vocoders.base_vocoder import get_vocoder_cls
 import pandas as pd
 
 
@@ -214,7 +214,7 @@ class BaseBinarizer:
 
     @staticmethod
     def get_f0cwt(f0, res):
-        from utils.cwt import get_cont_lf0, get_lf0_cwt
+        from ...utils.cwt import get_cont_lf0, get_lf0_cwt
         uv, cont_lf0_lpf = get_cont_lf0(f0)
         logf0s_mean_org, logf0s_std_org = np.mean(cont_lf0_lpf), np.std(cont_lf0_lpf)
         cont_lf0_lpf_norm = (cont_lf0_lpf - logf0s_mean_org) / logf0s_std_org

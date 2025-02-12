@@ -1,2 +1,2 @@
-from vocoders import pwg
-from vocoders import hifigan
+from ..vocoders import pwg
+from ..vocoders import hifigan

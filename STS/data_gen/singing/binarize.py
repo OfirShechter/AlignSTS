@@ -1,9 +1,9 @@
-from data_gen.tts.base_binarizer import BaseBinarizer
+from ...data_gen.tts.base_binarizer import BaseBinarizer
 import re
 from copy import deepcopy
 import logging
-from data_gen.tts.binarizer_zh import ZhBinarizer
-from utils.hparams import hparams
+from ...data_gen.tts.binarizer_zh import ZhBinarizer
+from ...utils.hparams import hparams
 
 
 def split_train_test_set(item_names):

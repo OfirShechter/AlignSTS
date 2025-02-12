@@ -1,8 +1,8 @@
 #-*- coding : utf-8-*-
 # coding:unicode_escape
 import os
-from data_gen.tts.base_pre_align import BasePreAlign
-from utils.hparams import hparams
+from ....data_gen.tts.base_pre_align import BasePreAlign
+from ....utils.hparams import hparams
 import glob
 
 

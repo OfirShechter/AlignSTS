@@ -2,22 +2,22 @@ import os
 import subprocess
 import sys
 
-from data_gen.tts.base_binarizer import BaseBinarizer, BinarizationError
+from ....data_gen.tts.base_binarizer import BaseBinarizer, BinarizationError
 import re
 from copy import deepcopy
 import logging
 from ....utils.hparams import hparams, set_hparams
 
-from utils.multiprocess_utils import chunked_multiprocess_run
+from ....utils.multiprocess_utils import chunked_multiprocess_run
 import random
 import traceback
 import json
 from resemblyzer import VoiceEncoder
 from tqdm import tqdm
-from data_gen.tts.data_gen_utils import get_mel2ph, get_pitch, build_phone_encoder
+from ....data_gen.tts.data_gen_utils import get_mel2ph, get_pitch, build_phone_encoder
 import numpy as np
-from utils.indexed_datasets import IndexedDatasetBuilder
-from vocoders.base_vocoder import get_vocoder_cls
+from ....utils.indexed_datasets import IndexedDatasetBuilder
+from ....vocoders.base_vocoder import get_vocoder_cls
 import pandas as pd
 import parselmouth
 

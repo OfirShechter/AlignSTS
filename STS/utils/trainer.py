@@ -448,7 +448,7 @@ class Trainer:
         return task
 
     def init_ddp_connection(self, proc_rank, world_size):
-        from utils.hparams import set_hparams
+        from ..utils.hparams import set_hparams
         set_hparams(print_hparams=False)
         root_node = '127.0.0.1'
         root_node = self.resolve_root_node_address(root_node)
