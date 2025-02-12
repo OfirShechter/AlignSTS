@@ -214,7 +214,7 @@ class Speech2SingingDataset(BaseDataset):
         txt_lengths = torch.LongTensor([s['txt_token'].numel() for s in samples]) \
             if samples[0]['txt_token'] is not None else None
         speech_mel_lengths = torch.LongTensor([s['speech']['mel'].shape[0] for s in samples]) \
-            if hparams['use_speech_mel'] else None
+            if self.hparams['use_speech_mel'] else None
         sing_mel_lengths = torch.LongTensor([s['sing']['mel'].shape[0] for s in samples])
 
         batch = {

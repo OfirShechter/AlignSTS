@@ -51,6 +51,7 @@ class HifiGAN(PWG):
         base_dir = hparams['vocoder_ckpt']
         config_path = f'{base_dir}/config.yaml'
         if os.path.exists(config_path):
+            print(f'##################### {base_dir}')
             ckpt = sorted(glob.glob(f'{base_dir}/model_ckpt_steps_*.ckpt'), key=
             lambda x: int(re.findall(f'{base_dir}/model_ckpt_steps_(\d+).ckpt', x)[0]))[-1]
             print('| load HifiGAN: ', ckpt)

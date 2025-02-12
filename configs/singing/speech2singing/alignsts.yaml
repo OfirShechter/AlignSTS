@@ -25,7 +25,7 @@ use_sing_wav2vec2: False
 spenv_filter: 0.0
 
 task_cls: STS.tasks.speech2singing.diffvae.DiffVAETask
-vocoder: vocoders.hifigan.HifiGAN
+vocoder: STS.vocoders.hifigan.HifiGAN
 vocoder_ckpt: checkpoints/hifigan  # chinese song checkpoints
 vocoder_use_f0: True
 

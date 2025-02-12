@@ -4,6 +4,7 @@
 /wavegan_pretrained*
 /pretrained_models
 /checkpoints
+STS/checkpoints
 /data
 rsync
 .idea
