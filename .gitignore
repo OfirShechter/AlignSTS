@@ -4,6 +4,7 @@
 /wavegan_pretrained*
 /pretrained_models
 /checkpoints
+STS/checkpoints
 /data
 rsync
 .idea
@@ -155,3 +156,6 @@ dmypy.json
 
 # data package
 mfa_thirdparty_linux.zip
+
+# vscode
+.history

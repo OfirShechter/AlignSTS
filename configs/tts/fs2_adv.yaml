@@ -10,6 +10,8 @@ decoder_type: fft # fft|rnn|conv|conformer
 decoder_rnn_dim: 0 # for rnn decoder, 0 -> hidden_size * 2
 dec_dilations: [ 1, 2, 4, 8, 1, 2, 4, 8, 1 ] # for conv decoder
 use_pos_embed: true
+use_cond_disc: false
+mel_gan: false
 
 # duration
 predictor_hidden: -1
