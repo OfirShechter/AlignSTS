@@ -49,7 +49,7 @@ Here we provide a speech-to-singing conversion pipeline using AlignSTS.
 3. Prepare **dataset** (test dataset): Download the statistical files of the test dataset at `data/binary/speech2singing-testdata`
 4. Run
 ```bash
-CUDA_VISIBLE_DEVICES=0 python tasks/run.py --exp_name alignsts --infer --hparams "gen_dir_name=test" --config configs/singing/speech2singing/alignsts.yaml --reset
+CUDA_VISIBLE_DEVICES=0 KMP_DUPLICATE_LIB_OK=TRUE python -m STS.tasks.run --exp_name alignsts --infer --hparams "gen_dir_name=test" --config configs/singing/speech2singing/alignsts.yaml --reset
 ```
 5. You will find outputs in `checkpoints/alignsts/generated_200000_test`, where [G] indicates ground truth mel results and [P] indicates predicted results.
 

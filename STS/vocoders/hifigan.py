@@ -51,11 +51,14 @@ class HifiGAN(PWG):
         base_dir = hparams['vocoder_ckpt']
         config_path = f'{base_dir}/config.yaml'
         if os.path.exists(config_path):
-            print(f'##################### {base_dir}')
-            ckpt = sorted(glob.glob(f'{base_dir}/model_ckpt_steps_*.ckpt'), key=
-            lambda x: int(re.findall(f'{base_dir}/model_ckpt_steps_(\d+).ckpt', x)[0]))[-1]
+            ckpt_files = glob.glob(f'{base_dir}/model_ckpt_steps_*.ckpt')
+            print(f"Checkpoint files found: {ckpt_files}")
+            if not ckpt_files:
+                raise FileNotFoundError(f"No checkpoint files found in {base_dir}")
+            ckpt = sorted(ckpt_files, key=lambda x: int(re.findall(r'model_ckpt_steps_(\d+).ckpt', x.replace('\\', '/'))[0]))[-1]
             print('| load HifiGAN: ', ckpt)
             self.model, self.config, self.device = load_model(config_path=config_path, checkpoint_path=ckpt)
+            print(f'| HifiGAN device: {self.device}.')
         else:
             config_path = f'{base_dir}/config.json'
             ckpt = f'{base_dir}/generator_v1'
