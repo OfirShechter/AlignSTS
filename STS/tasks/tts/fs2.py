@@ -1,25 +1,25 @@
 import matplotlib
 matplotlib.use('Agg')
 
-from utils import audio
+from ...utils import audio
 import matplotlib.pyplot as plt
-from data_gen.tts.data_gen_utils import get_pitch
-from tasks.tts.fs2_utils import FastSpeechDataset
-from modules.commons.ssim import ssim
+from ...data_gen.tts.data_gen_utils import get_pitch
+from ...tasks.tts.fs2_utils import FastSpeechDataset
+from ...modules.commons.ssim import ssim
 import os
 from multiprocessing.pool import Pool
 from tqdm import tqdm
-from modules.fastspeech.tts_modules import mel2ph_to_dur
-from utils.hparams import hparams
-from utils.plot import spec_to_figure, dur_to_figure, f0_to_figure
-from utils.pitch_utils import denorm_f0
-from modules.fastspeech.fs2 import FastSpeech2
-from tasks.tts.transformer_tts import TransformerTtsTask
+from ...modules.fastspeech.tts_modules import mel2ph_to_dur
+from ...utils.hparams import hparams
+from ...utils.plot import spec_to_figure, dur_to_figure, f0_to_figure
+from ...utils.pitch_utils import denorm_f0
+from ...modules.fastspeech.fs2 import FastSpeech2
+from ...tasks.tts.transformer_tts import TransformerTtsTask
 import torch
 import torch.optim
 import torch.utils.data
 import torch.nn.functional as F
-import utils
+import STS.utils as utils
 import torch.distributions
 import numpy as np
 

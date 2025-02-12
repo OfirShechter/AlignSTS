@@ -5,11 +5,11 @@ import torch
 import yaml
 from sklearn.preprocessing import StandardScaler
 from torch import nn
-from modules.parallel_wavegan.models import ParallelWaveGANGenerator
-from modules.parallel_wavegan.utils import read_hdf5
-from utils.hparams import hparams
-from utils.pitch_utils import f0_to_coarse
-from vocoders.base_vocoder import BaseVocoder, register_vocoder
+from ..modules.parallel_wavegan.models import ParallelWaveGANGenerator
+from ..modules.parallel_wavegan.utils import read_hdf5
+from ..utils.hparams import hparams
+from ..utils.pitch_utils import f0_to_coarse
+from ..vocoders.base_vocoder import BaseVocoder, register_vocoder
 import numpy as np
 
 

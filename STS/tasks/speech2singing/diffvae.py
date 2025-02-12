@@ -22,13 +22,13 @@ from ...tasks.base_task import BaseDataset
 from ...tasks.tts.fs2 import FastSpeech2Task
 from ...tasks.tts.transformer_tts import TransformerTtsTask
 from ...vocoders.base_vocoder import get_vocoder_cls, BaseVocoder
+import STS.utils as utils
+from ...modules.speech2singing.diffvae import DiffVAE
+from ...modules.speech2singing.diffvae2 import DiffVAE2, DiffVAE3
 
-from modules.speech2singing.diffvae import DiffVAE
-from modules.speech2singing.diffvae2 import DiffVAE2, DiffVAE3
-
-from modules.diffusion.net import DiffNet
-from modules.fastspeech.pe import PitchExtractor
-from modules.fastspeech.tts_modules import mel2ph_to_dur
+from ...modules.diffusion.net import DiffNet
+from ...modules.fastspeech.pe import PitchExtractor
+from ...modules.fastspeech.tts_modules import mel2ph_to_dur
 
 MODELS = {
     'diffvae1': DiffVAE,

@@ -13,7 +13,7 @@ import webrtcvad
 from scipy.ndimage.morphology import binary_dilation
 import librosa
 import numpy as np
-from utils import audio
+from ...utils import audio
 import pyloudnorm as pyln
 import re
 import json

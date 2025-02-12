@@ -5,10 +5,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from modules.commons.common_layers import EncSALayer, LayerNorm, BatchNorm1dTBC, MultiheadAttention, \
+from ...modules.commons.common_layers import EncSALayer, LayerNorm, BatchNorm1dTBC, MultiheadAttention, \
     SinusoidalPositionalEmbedding
-from modules.fastspeech.tts_modules import FFTBlocks, DEFAULT_MAX_TARGET_POSITIONS
-from utils.tts_utils import sequence_mask
+from ...modules.fastspeech.tts_modules import FFTBlocks, DEFAULT_MAX_TARGET_POSITIONS
+from ...utils.tts_utils import sequence_mask
 
 
 class CrossformerEncoderLayer(EncSALayer):

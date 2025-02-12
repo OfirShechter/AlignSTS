@@ -4,8 +4,8 @@ import multiprocessing as mp
 import copy
 import sys
 
-from utils.hparams import hparams, set_hparams
-from utils import audio
+from ....utils.hparams import hparams, set_hparams
+from ....utils import audio
 from usr.usr_utils import *
 
 import textgrid

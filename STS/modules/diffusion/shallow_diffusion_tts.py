@@ -9,9 +9,8 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from tqdm import tqdm
-from einops import rearrange
 
-from modules.fastspeech.fs2 import FastSpeech2
+from ...modules.fastspeech.fs2 import FastSpeech2
 from utils.hparams import hparams
 
 

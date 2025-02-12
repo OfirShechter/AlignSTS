@@ -8,22 +8,22 @@ from multiprocessing.pool import Pool
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-import utils
-from utils.hparams import hparams
-from data_gen.tts.data_gen_utils import get_pitch
-from utils.indexed_datasets import IndexedDataset
-from utils.pitch_utils import norm_interp_f0, denorm_f0, midi_pitch_shift, midi_to_hz, get_uv
-import utils.audio as audio
-from utils.plot import spec_to_figure
-from tasks.base_task import BaseDataset
-from tasks.tts.fs2 import FastSpeech2Task
+import STS.utils as utils
+from ...utils.hparams import hparams
+from ...data_gen.tts.data_gen_utils import get_pitch
+from ...utils.indexed_datasets import IndexedDataset
+from ...utils.pitch_utils import norm_interp_f0, denorm_f0, midi_pitch_shift, midi_to_hz, get_uv
+import STS.utils.audio as audio
+from ...utils.plot import spec_to_figure
+from ...tasks.base_task import BaseDataset
+from ...tasks.tts.fs2 import FastSpeech2Task
 
-from modules.diffusion.net import DiffNet
-from tasks.speech2singing.diffvae import DiffVAETask, MODELS, Speech2SingingDataset
-from modules.fastspeech.pe import PitchExtractor
-from modules.fastspeech.tts_modules import mel2ph_to_dur
-from modules.fastspeech.multi_window_disc import Discriminator
-from utils.common_schedulers import RSQRTSchedule
+from ...modules.diffusion.net import DiffNet
+from ...tasks.speech2singing.diffvae import DiffVAETask, MODELS, Speech2SingingDataset
+from ...modules.fastspeech.pe import PitchExtractor
+from ...modules.fastspeech.tts_modules import mel2ph_to_dur
+from ...modules.fastspeech.multi_window_disc import Discriminator
+from ...utils.common_schedulers import RSQRTSchedule
 
 class Sp2SingAdvTask(DiffVAETask):
     def build_model(self):

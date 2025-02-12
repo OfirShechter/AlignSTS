@@ -5,8 +5,8 @@ from utils.tts_utils import sequence_mask, select_attn, get_focus_rate, get_phon
 matplotlib.use('Agg')
 
 from multiprocessing.pool import Pool
-from tasks.base_task import data_loader
-from utils.common_schedulers import RSQRTSchedule
+from ...tasks.base_task import data_loader
+from ...utils.common_schedulers import RSQRTSchedule
 from vocoders.base_vocoder import get_vocoder_cls, BaseVocoder
 
 import os
@@ -14,11 +14,11 @@ import numpy as np
 from tqdm import tqdm
 import torch.distributed as dist
 
-from modules.fastspeech import transformer_tts
-from tasks.base_task import BaseTask, BaseDataset
-from utils.hparams import hparams
-from utils.indexed_datasets import IndexedDataset
-from utils.text_encoder import TokenTextEncoder
+from ...modules.fastspeech import transformer_tts
+from ...tasks.base_task import BaseTask, BaseDataset
+from ...utils.hparams import hparams
+from ...utils.indexed_datasets import IndexedDataset
+from ...utils.text_encoder import TokenTextEncoder
 import json
 
 import matplotlib.pyplot as plt
@@ -26,9 +26,9 @@ import torch
 import torch.optim
 import torch.utils.data
 import torch.nn.functional as F
-import utils
+import STS.utils as utils
 import logging
-from utils import audio
+from ...utils import audio
 
 
 class TransTTSDataset(BaseDataset):

@@ -2,12 +2,12 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils.hparams import hparams
-from utils.pitch_utils import f0_to_coarse, denorm_f0
-from modules.commons.common_layers import LinearNorm, Linear, Embedding
-from modules.speech2singing.modules import CrossFormerBlocks
-from modules.diffusion.shallow_diffusion_tts import DiffusionDecoder
-from modules.fastspeech.tts_modules import FastspeechDecoder, LayerNorm
+from ...utils.hparams import hparams
+from ...utils.pitch_utils import f0_to_coarse, denorm_f0
+from ...modules.commons.common_layers import LinearNorm, Linear, Embedding
+from ...modules.speech2singing.modules import CrossFormerBlocks
+from ...modules.diffusion.shallow_diffusion_tts import DiffusionDecoder
+from ...modules.fastspeech.tts_modules import FastspeechDecoder, LayerNorm
 
 class RhythmEncoder(nn.Module):
     """Rhythm Encoder

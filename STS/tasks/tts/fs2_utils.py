@@ -1,19 +1,19 @@
 import glob
 import importlib
-from utils.cwt import get_lf0_cwt
+from ...utils.cwt import get_lf0_cwt
 import os
 import torch.optim
 import torch.utils.data
-from utils.indexed_datasets import IndexedDataset
-from utils.pitch_utils import norm_interp_f0
+from ...utils.indexed_datasets import IndexedDataset
+from ...utils.pitch_utils import norm_interp_f0
 import numpy as np
-from tasks.base_task import BaseDataset
+from ...tasks.base_task import BaseDataset
 import torch
 import torch.optim
 import torch.utils.data
-import utils
+import STS.utils as utils
 import torch.distributions
-from utils.hparams import hparams
+from ...utils.hparams import hparams
 
 
 class FastSpeechDataset(BaseDataset):

@@ -6,10 +6,9 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from tqdm import tqdm
-from einops import rearrange
 from inspect import isfunction
 
-from modules.fastspeech.fs2 import FastSpeech2
+from ...modules.fastspeech.fs2 import FastSpeech2
 from utils.hparams import hparams
 
 def vpsde_beta_t(t, T, min_beta, max_beta):

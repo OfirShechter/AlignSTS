@@ -5,10 +5,10 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
-from modules.commons.common_layers import ConvNorm, Embedding
-from modules.commons.common_layers import SinusoidalPositionalEmbedding, Linear, EncSALayer, DecSALayer, BatchNorm1dTBC
-from modules.commons.mixture import sample_from_mixture
-from utils.hparams import hparams
+from ...modules.commons.common_layers import ConvNorm, Embedding
+from ...modules.commons.common_layers import SinusoidalPositionalEmbedding, Linear, EncSALayer, DecSALayer, BatchNorm1dTBC
+from ...modules.commons.mixture import sample_from_mixture
+from ...utils.hparams import hparams
 
 DEFAULT_MAX_SOURCE_POSITIONS = 2000
 DEFAULT_MAX_TARGET_POSITIONS = 2000

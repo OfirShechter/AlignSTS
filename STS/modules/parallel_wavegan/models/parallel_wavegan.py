@@ -11,13 +11,13 @@ import math
 import torch
 from torch import nn
 
-from modules.parallel_wavegan.layers import Conv1d
-from modules.parallel_wavegan.layers import Conv1d1x1
-from modules.parallel_wavegan.layers import ResidualBlock
-from modules.parallel_wavegan.layers import upsample
-from modules.parallel_wavegan import models
-from modules.parallel_wavegan.models import SourceModuleCycNoise_v1
-from utils.hparams import hparams
+from ....modules.parallel_wavegan.layers import Conv1d
+from ....modules.parallel_wavegan.layers import Conv1d1x1
+from ....modules.parallel_wavegan.layers import ResidualBlock
+from ....modules.parallel_wavegan.layers import upsample
+from ....modules.parallel_wavegan import models
+from ....modules.parallel_wavegan.models import SourceModuleCycNoise_v1
+from ....utils.hparams import hparams
 import numpy as np
 
 class ParallelWaveGANGenerator(torch.nn.Module):

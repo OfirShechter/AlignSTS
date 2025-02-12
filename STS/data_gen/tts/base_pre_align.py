@@ -3,18 +3,18 @@ import os
 os.environ["OMP_NUM_THREADS"] = "1"
 
 import librosa
-from utils import audio
-from data_gen.tts.data_gen_utils import is_sil_phoneme
-from utils.multiprocess_utils import chunked_multiprocess_run
+from ...utils import audio
+from ...data_gen.tts.data_gen_utils import is_sil_phoneme
+from ...utils.multiprocess_utils import chunked_multiprocess_run
 import traceback
 import importlib
-from utils.hparams import hparams, set_hparams
+from ...utils.hparams import hparams, set_hparams
 import json
 import os
 import subprocess
 from tqdm import tqdm
 import pandas as pd
-from utils.rnnoise import rnnoise
+from ...utils.rnnoise import rnnoise
 
 
 class BasePreAlign:

@@ -1,6 +1,6 @@
-from modules.commons.common_layers import *
-from modules.commons.common_layers import Embedding
-from modules.fastspeech.tts_modules import FastspeechDecoder, DurationPredictor, LengthRegulator, PitchPredictor, \
+from ...modules.commons.common_layers import *
+from ...modules.commons.common_layers import Embedding
+from ...modules.fastspeech.tts_modules import FastspeechDecoder, DurationPredictor, LengthRegulator, PitchPredictor, \
     ConvEmbedding, FastspeechEncoder
 from utils.hparams import hparams
 from utils.pitch_utils import f0_to_coarse, denorm_f0

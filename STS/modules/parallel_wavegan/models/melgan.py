@@ -11,10 +11,10 @@ import numpy as np
 import torch
 from torch import nn
 
-from modules.parallel_wavegan.layers import CausalConv1d
-from modules.parallel_wavegan.layers import CausalConvTranspose1d
-from modules.parallel_wavegan.layers import ResidualStack
-from modules.parallel_wavegan.models.source import SourceModuleCycNoise_v1
+from ....modules.parallel_wavegan.layers import CausalConv1d
+from ....modules.parallel_wavegan.layers import CausalConvTranspose1d
+from ....modules.parallel_wavegan.layers import ResidualStack
+from ....modules.parallel_wavegan.models.source import SourceModuleCycNoise_v1
 
 
 class MelGANGenerator(torch.nn.Module):

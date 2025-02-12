@@ -1,9 +1,9 @@
-from modules.fastspeech.tts_modules import TransformerEncoderLayer, TransformerDecoderLayer, \
+from ...modules.fastspeech.tts_modules import TransformerEncoderLayer, TransformerDecoderLayer, \
     DEFAULT_MAX_SOURCE_POSITIONS, DEFAULT_MAX_TARGET_POSITIONS
-from modules.commons.common_layers import *
-from modules.commons.gaussian import sample_from_gaussian
-from utils.hparams import hparams
-from utils.tts_utils import sequence_mask, fill_with_neg_inf2, select_attn
+from ...modules.commons.common_layers import *
+from ...modules.commons.gaussian import sample_from_gaussian
+from ...utils.hparams import hparams
+from ...utils.tts_utils import sequence_mask, fill_with_neg_inf2, select_attn
 
 
 class TransformerEncoder(nn.Module):

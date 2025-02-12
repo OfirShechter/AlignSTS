@@ -1,6 +1,6 @@
 import random
 from torch.cuda.amp import GradScaler, autocast
-from utils import move_to_cuda
+from ..utils import move_to_cuda
 import subprocess
 import numpy as np
 import torch.optim
@@ -15,8 +15,8 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 import tqdm
 
-from utils.ckpt_utils import get_last_checkpoint, get_all_ckpts
-from utils.ddp_utils import DDP
+from ..utils.ckpt_utils import get_last_checkpoint, get_all_ckpts
+from ..utils.ddp_utils import DDP
 
 
 class Trainer:

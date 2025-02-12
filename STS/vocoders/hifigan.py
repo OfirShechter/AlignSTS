@@ -8,10 +8,10 @@ import torch
 
 import utils
 import numpy as np
-from modules.hifigan.hifigan import HifiGanGenerator
-from utils.hparams import hparams, set_hparams
-from vocoders.base_vocoder import register_vocoder
-from vocoders.pwg import PWG
+from ..modules.hifigan.hifigan import HifiGanGenerator
+from ..utils.hparams import hparams, set_hparams
+from ..vocoders.base_vocoder import register_vocoder
+from ..vocoders.pwg import PWG
 
 def denoise(wav, v=0.1):
     spec = librosa.stft(y=wav, n_fft=hparams['fft_size'], hop_length=hparams['hop_size'],

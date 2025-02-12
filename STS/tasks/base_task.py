@@ -3,14 +3,14 @@ import traceback
 from datetime import datetime
 from functools import wraps
 from torch.utils.tensorboard import SummaryWriter
-from utils.hparams import hparams, set_hparams
+from ..utils.hparams import hparams, set_hparams
 import random
 import sys
 import numpy as np
-from utils.trainer import Trainer
+from ..utils.trainer import Trainer
 from torch import nn
 import torch.utils.data
-import utils
+import STS.utils as utils
 import logging
 import os
 

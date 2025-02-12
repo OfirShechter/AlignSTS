@@ -6,8 +6,7 @@ from data_gen.tts.base_binarizer import BaseBinarizer, BinarizationError
 import re
 from copy import deepcopy
 import logging
-from data_gen.tts.binarizer_zh import ZhBinarizer
-from utils.hparams import hparams, set_hparams
+from ....utils.hparams import hparams, set_hparams
 
 from utils.multiprocess_utils import chunked_multiprocess_run
 import random
