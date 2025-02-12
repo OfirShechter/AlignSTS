@@ -118,5 +118,4 @@ def set_hparams(config='', exp_name='', hparams_str='', print_hparams=True, glob
             print(f"\033[;33;m{k}\033[0m: {v}, ", end="\n" if i % 5 == 4 else "")
         print("")
         global_print_hparams = False
-    # print(hparams_.keys())
     return hparams_

@@ -6,6 +6,7 @@ def run_task():
     assert hparams['task_cls'] != ''
     pkg = ".".join(hparams["task_cls"].split(".")[:-1])
     cls_name = hparams["task_cls"].split(".")[-1]
+    print(f"========================={cls_name}")
     task_instance = getattr(importlib.import_module(pkg), cls_name)()
     task_instance.start()
 

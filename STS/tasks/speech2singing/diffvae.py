@@ -11,7 +11,7 @@ import json
 import traceback
 from scipy.ndimage import gaussian_filter
 
-from ...utils.hparams import hparams
+from ...utils.hparams import hparams, set_hparams
 from ...data_gen.tts.data_gen_utils import get_pitch
 from ...utils.indexed_datasets import IndexedDataset
 from ...utils.pitch_utils import norm_interp_f0, denorm_f0, midi_pitch_shift, midi_to_hz, get_uv
@@ -607,8 +607,7 @@ class DiffVAETask(FastSpeech2Task):
             str_phs = None
             if self.phone_encoder is not None and 'txt_tokens' in prediction:
                 str_phs = self.phone_encoder.decode(prediction['txt_tokens'], strip_padding=True)
-            gen_dir = os.path.join(hparams['work_dir'],
-                                   f'generated_{self.trainer.global_step}_{hparams["gen_dir_name"]}')
+            gen_dir = hparams['work_dir'] + '/' + f'generated_{self.trainer.global_step}_{hparams["gen_dir_name"]}'
             if hparams.get('vocoder_use_f0', False):
                 try:
                     wav_pred = self.vocoder.spec2wav(mel_pred, f0=f0_pred)
@@ -685,12 +684,14 @@ class DiffVAETask(FastSpeech2Task):
     @staticmethod
     def save_result(wav_out, mel, prefix, item_name, text, gen_dir, str_phs=None, mel2ph=None, gt_f0=None,
                     pred_f0=None, aw_main=None):
+        set_hparams(print_hparams=False)
         item_name = item_name.replace('/', '-')
         base_fn = f'[{item_name}][{prefix}]'
 
         if text is not None:
             base_fn += text
         base_fn += ('-' + hparams['exp_name'])
+        print(f"Saving {base_fn}", f'{gen_dir}/wavs/{base_fn}.wav')
         np.save(os.path.join(hparams['work_dir'], f'{prefix}_mels_npy', item_name), mel)
         audio.save_wav(wav_out, f'{gen_dir}/wavs/{base_fn}.wav', hparams['audio_sample_rate'],
                        norm=hparams['out_wav_norm'])
