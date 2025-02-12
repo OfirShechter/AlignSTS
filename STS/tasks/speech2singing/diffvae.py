@@ -690,7 +690,7 @@ class DiffVAETask(FastSpeech2Task):
 
         if text is not None:
             base_fn += text
-        base_fn += ('-' + hparams['exp_name'])
+        # base_fn += ('-' + hparams['exp_name'])
         print(f"Saving {base_fn}", f'{gen_dir}/wavs/{base_fn}.wav')
         np.save(os.path.join(hparams['work_dir'], f'{prefix}_mels_npy', item_name), mel)
         audio.save_wav(wav_out, f'{gen_dir}/wavs/{base_fn}.wav', hparams['audio_sample_rate'],
